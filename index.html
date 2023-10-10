@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Contact Management</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="my.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+    
+    /* Remove the jumbotron's default bottom margin */ 
+    .jumbotron {
+      margin-bottom: 0;
+    }
+   
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1>Contact Management</h1>      
+    <p>contact list</p>
+  </div>
+</div>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Contact Management</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" id = "addContact"><span class="glyphicon glyphicon-user"></span> Add</a></li>
+      </ul>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          // "Add" 버튼 클릭 이벤트 핸들러 추가
+          document.getElementById("addContact").addEventListener("click", function () {
+            // "add.html" 페이지로 이동
+            window.location.href = "add.html";
+          });
+        });
+        </script>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <h2>Contact List</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Relationship</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Birthday</th>
+        <th>Special Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr data-href="view.html">
+        <td>권총명</td>
+        <td>나</td>
+        <td>010-6769-2143</td>
+        <td>mcwon@naver.com</td>
+        <td>9.16</td>
+        <td>한동대학교 재학.</td>
+      </tr>
+      <tr data-href="view.html">
+        <td>권혁준</td>
+        <td>부</td>
+        <td>010-1234-5678</td>
+        <td>spirit1970@naver.com</td>
+        <td>3.16</td>
+        <td>없음.</td>
+      </tr>
+      <tr data-href="view.html">
+        <td>정에스더</td>
+        <td>모</td>
+        <td>010-1234-0010</td>
+        <td>top2144@nate.com</td>
+        <td>9.11</td>
+        <td>복숭아 알레르기.</td>
+      </tr>
+      <tr data-href="view.html">
+        <td>권예은</td>
+        <td>동생</td>
+        <td>010-1010-4567</td>
+        <td>yeeun1030@google.com</td>
+        <td>10.30</td>
+        <td>복숭아 알레르기.</td>
+      </tr>
+      <tr data-href="view.html">
+        <td>권예진</td>
+        <td>동생</td>
+        <td>010-1011-4567</td>
+        <td>yejin29@google.com</td>
+        <td>4.29</td>
+        <td>없음.</td>
+      </tr>
+      <tr data-href="view.html">
+        <td>정하준</td>
+        <td>친구</td>
+        <td>010-1234-4567</td>
+        <td>jhj@naver.com</td>
+        <td>12.1</td>
+        <td>없음.</td>
+      </tr>
+      <tr data-href="view.html">
+        <td>박동예</td>
+        <td>친구</td>
+        <td>010-1004-1010</td>
+        <td>dye@google.com</td>
+        <td>10.10</td>
+        <td>안동대학교 재학.</td>
+      </tr>
+      <tr data-href="view.html">
+        <td>신정훈</td>
+        <td>친구</td>
+        <td>010-1010-9876</td>
+        <td>sin@google.com</td>
+        <td>10.10</td>
+        <td>한동대학교 재학.</td>
+      </tr>
+      <tr data-href="view.html">
+        <td>김철수</td>
+        <td>동료</td>
+        <td>010-1004-1233</td>
+        <td>chulsu@naver.com</td>
+        <td>8.15</td>
+        <td>없음.</td>
+      </tr>
+      <tr data-href="view.html">
+        <td>김민지</td>
+        <td>동료</td>
+        <td>010-1234-1015</td>
+        <td>minji@nate.com</td>
+        <td>5.23</td>
+        <td>없음.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<footer class="container-fluid text-center">
+  <p>Find contacts via email</p>  
+  <form class="form-inline">
+    Email address:
+    <input type="email" class="form-control" size="30" placeholder="Enter email address">
+    <button type="button" class="btn btn-danger">Search</button>
+  </form>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var rows = document.querySelectorAll("tbody tr[data-href]");
+
+    rows.forEach(function (row) {
+      row.addEventListener("click", function () {
+        window.location.href = row.getAttribute("data-href");
+      });
+    });
+  });
+</script>
+</body>
+</html>
