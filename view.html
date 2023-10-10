@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Contact Details</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="my.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Add custom styles for your view.html page here */
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Contact Details</h2>
+  <table class="table">
+    <tbody>
+      <tr>
+        <td>Name:</td>
+        <td>권총명</td>
+      </tr>
+      <tr>
+        <td>Relationship:</td>
+        <td>나</td>
+      </tr>
+      <tr>
+        <td>Phone Number:</td>
+        <td>010-6769-2143</td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td>mcwon@naver.com</td>
+      </tr>
+      <tr>
+        <td>Birthday:</td>
+        <td>9.16</td>
+      </tr>
+      <tr>
+        <td>Special Notes:</td>
+        <td>한동대학교 재학.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <a href="edit.html" class="btn btn-primary">Edit</a>
+  <button class="btn btn-danger" onclick="confirmDelete()">Delete</button>
+</div>
+
+<script>
+  function confirmDelete() {
+    if (confirm("게시물을 삭제할까요?")) {
+    }
+  }
+</script>
+
+</body>
+</html>
