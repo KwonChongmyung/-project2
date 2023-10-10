@@ -1,0 +1,13 @@
+.table th, .table td {
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .table th, .table td {
+      text-align: left;
+    }
+    
+    .table th, .table td {
+      font-size: 14px;
+    }
+  }
