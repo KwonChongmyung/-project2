@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Edit Contact</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="my.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Edit Contact</h2>
+  <form name="editForm" action="update.php" onsubmit="return validateForm()" method="post">
+    <input type="hidden" name="contactId" value="1"> 
+
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name" name="name" value="권총명">
+    </div>
+    <div class="form-group">
+      <label for="relationship">Relationship:</label>
+      <input type="text" class="form-control" id="relationship" name="relationship" value="나">
+    </div>
+    <div class="form-group">
+      <label for="pn">Phone Number:</label>
+      <input type="text" class="form-control" id="pn" name="pn" value="010-6769-2143">
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="text" class="form-control" id="email" name="email" value="mcwon@naver.com">
+    </div>
+    <div class="form-group">
+      <label for="birthday">Birthday:</label>
+      <input type="text" class="form-control" id="birthday" name="birthday" value="9.16">
+    </div>
+    <div class="form-group">
+      <label for="special">Special Notes:</label>
+      <textarea class="form-control" id="special" name="special" rows="5">한동대학교 재학.</textarea>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">수정</button>
+    <button class="btn btn-danger" onclick="confirmUpdate()">삭제</button>
+  </form>
+
+  <script>
+    function confirmUpdate() {
+      if (confirm("게시물을 수정할까요?")) {
+        
+      }
+    }
+
+    function validateForm() {
+      
+      return true; // 유효성 검사 통과 시 true
+    }
+  </script>
+</div>
+
+</body>
+</html>
