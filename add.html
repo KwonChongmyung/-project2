@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <title>Contact Management</title>
   <meta charset="utf-8">
@@ -10,20 +9,54 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <style>
-    
+    body {
+      background-color: #f2f2f2;
+    }
+
+    .container {
+      background-color: #ffffff;
+      padding: 20px;
+      margin-top: 50px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+    form input,
+    form textarea {
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 <body>
-
-<form name="form1" action="form2_ok.php" onsubmit="return validateForm()" method="post">
-  이름: <input type="text" name="name"><br>
-  관계: <input type="text" name="relationship"><br>
-  전화번호: <input type="text" name="pn"><br>
-  이메일: <input type="text" name="email"><br>
-  생일: <input type="text" name="birthday"><br>
-  특이사항: <textarea name='special' cols='10' rows='5'></textarea><br>
-  <input type="submit" value="추가">
-</form>
+  <div class="container">
+    <h2 class="text-center">Add Contact</h2>
+    <form name="form1" action="form2_ok.php" onsubmit="return validateForm()" method="post">
+      <div class="form-group">
+        <label for="name">이름:</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="relationship">관계:</label>
+        <input type="text" class="form-control" id="relationship" name="relationship" required>
+      </div>
+      <div class="form-group">
+        <label for="pn">전화번호:</label>
+        <input type="text" class="form-control" id="pn" name="pn" required>
+      </div>
+      <div class="form-group">
+        <label for="email">이메일:</label>
+        <input type="text" class="form-control" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="birthday">생일:</label>
+        <input type="text" class="form-control" id="birthday" name="birthday" required>
+      </div>
+      <div class="form-group">
+        <label for="special">특이사항:</label>
+        <textarea class="form-control" id="special" name="special" cols="10" rows="5"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">추가</button>
+    </form>
+  </div>
 
 <script>
   function validateForm() {
