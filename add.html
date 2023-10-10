@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Management</title>
+</head>
+<body>
+
+<form name="form1" action="form2_ok.php" onsubmit="return validateForm()" method="post">
+  이름: <input type="text" name="name"><br>
+  관계: <input type="text" name="relationship"><br>
+  전화번호: <input type="text" name="pn"><br>
+  이메일: <input type="text" name="email"><br>
+  생일: <input type="text" name="birthday"><br>
+  특이사항: <textarea name='special' cols='10' rows='5'></textarea><br>
+  <input type="submit" value="추가">
+</form>
+
+<script>
+  function validateForm() {
+    var name = document.form1.name;
+    if (name.value == "") {
+      alert("이름을 입력하세요.");
+      name.focus();
+      return false;
+    }
+    if (name.value.length < 2) {
+      alert("이름은 두 글자 이상 입력하세요.");
+      name.focus();
+      return false;
+    }
+
+    var relationship = document.form1.relationship;
+    if (relationship.value == "") {
+      alert("관계를 입력하세요.");
+      relationship.focus();
+      return false;
+    }
+
+    var pn = document.form1.pn;
+    var phoneNumberPattern = /^[0-9]+$/;
+    if (pn.value == "") {
+      alert("전화번호를 입력하세요.");
+      pn.focus();
+      return false;
+    } else if (!phoneNumberPattern.test(pn.value)) {
+      alert("숫자만 입력하세요.");
+      pn.focus();
+      return false;
+    }
+
+    var email = document.form1.email;
+    var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (email.value === "") {
+      alert("이메일 주소를 입력하세요.");
+      email.focus();
+      return false;
+    } else if (!emailPattern.test(email.value)) {
+      alert("올바른 이메일 형식이 아닙니다. 다시 입력하세요.");
+      email.focus();
+      return false;
+    }
+
+    var birthday = document.form1.birthday;
+    var birthdayPattern = /^[0-9.]+$/;
+    if (birthday.value === "") {
+      alert("생일을 입력하세요.");
+      birthday.focus();
+      return false;
+    } else if (!birthdayPattern.test(birthday.value)) {
+      alert("숫자와 '.'만 입력하세요.");
+      birthday.focus();
+      return false;
+    }
+
+
+    alert("게시물이 추가됩니다.");
+    return true;
+  }
+</script>
+
+</body>
+</html>
